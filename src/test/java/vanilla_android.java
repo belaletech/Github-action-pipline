@@ -7,7 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class vanilla_android {
-    public static String userName = System.getenv("LT_USERNAME") == null ? "YOUR_USERNAME" // Add username here
+    public static String userName = System.getenv("LT_USERNAME") == null ? "YOUR_USERNAM" // Add username here
             : System.getenv("LT_USERNAME");
     public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "YOUR_ACCESS_KEY" // Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
@@ -18,13 +18,15 @@ public class vanilla_android {
 
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("deviceName", "Galaxy S20");
-            capabilities.setCapability("platformVersion", "11");
+            capabilities.setCapability("deviceName", "Galaxy S24");
+            capabilities.setCapability("platformVersion", "14");
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("isRealMobile", true);
-            capabilities.setCapability("app", "APP_URL"); // Enter your app url
+            capabilities.setCapability("app", "lt://APP1016037481750418935716935"); // Enter your app url
             capabilities.setCapability("deviceOrientation", "PORTRAIT");
             capabilities.setCapability("build", "Java Vanilla - Android");
+            capabilities.setCapability("autoAcceptAlerts", true);
+            capabilities.setCapability("autoGrantPermissions",true);
             capabilities.setCapability("name", "Sample Test Java");
             capabilities.setCapability("console", true);
             capabilities.setCapability("network", false);
