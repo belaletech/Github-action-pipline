@@ -5,6 +5,7 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:    # 👈 This allows manual trigger from GitHub UI
 
 jobs:
   build:
@@ -29,6 +30,11 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+
+      - name: Set LambdaTest Environment Variables
+        run: |
+          echo "LT_USERNAME=${{ secrets.LT_USERNAME }}" >> $GITHUB_ENV
+          echo "LT_ACCESS_KEY=${{ secrets.LT_ACCESS_KEY }}" >> $GITHUB_ENV
 
       - name: Run Maven tests with Android Profile
         run: mvn test -P android
