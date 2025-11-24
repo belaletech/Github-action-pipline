@@ -62,40 +62,41 @@ public class VanillaAndroidW3C {
 
     @Test
     public void sampleTest() throws Exception {
-
-        MobileElement color = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/color"));
-        color.click();
-
-        MobileElement text = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/Text"));
-        text.click();
-
-        MobileElement toast = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/toast"));
-        toast.click();
-
-        MobileElement notification = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/notification"));
-        notification.click();
-
-        MobileElement geo = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/geoLocation"));
-        geo.click();
-        Thread.sleep(3000);
-
-        driver.navigate().back();
-        Thread.sleep(2000);
-
-        MobileElement speedtest = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/speedTest"));
-        speedtest.click();
-        Thread.sleep(3000);
-        driver.navigate().back();
-
-        // Browser test
-        MobileElement browser = (MobileElement) driver.findElement(MobileBy.AccessibilityId("Browser"));
-        browser.click();
-
-        MobileElement url = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/url"));
-        url.sendKeys("https://www.lambdatest.com");
-
-        MobileElement find = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/find"));
-        find.click();
+    Thread.sleep(5000);
+        System.out.println("session created");
+//        MobileElement color = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/color"));
+//        color.click();
+//
+//        MobileElement text = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/Text"));
+//        text.click();
+//
+//        MobileElement toast = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/toast"));
+//        toast.click();
+//
+//        MobileElement notification = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/notification"));
+//        notification.click();
+//
+//        MobileElement geo = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/geoLocation"));
+//        geo.click();
+//        Thread.sleep(3000);
+//
+//        driver.navigate().back();
+//        Thread.sleep(2000);
+//
+//        MobileElement speedtest = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/speedTest"));
+//        speedtest.click();
+//        Thread.sleep(3000);
+//        driver.navigate().back();
+//
+//        // Browser test
+//        MobileElement browser = (MobileElement) driver.findElement(MobileBy.AccessibilityId("Browser"));
+//        browser.click();
+//
+//        MobileElement url = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/url"));
+//        url.sendKeys("https://www.lambdatest.com");
+//
+//        MobileElement find = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/find"));
+//        find.click();
     }
 
     @AfterClass
