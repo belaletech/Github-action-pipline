@@ -18,20 +18,30 @@ public class vanilla_android {
 
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("deviceName", "Galaxy S24");
-            capabilities.setCapability("platformVersion", "14");
+            capabilities.setCapability("deviceName", "Pixel Tablet");
+            capabilities.setCapability("platformVersion", "13");
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("isRealMobile", true);
-            capabilities.setCapability("app", "lt://APP1016037481750418935716935"); // Enter your app url
+            capabilities.setCapability("app", "lt://APP10160301691761838297670235"); // Enter your app url
             capabilities.setCapability("deviceOrientation", "PORTRAIT");
-            capabilities.setCapability("build", "Java Vanilla - Android");
-            capabilities.setCapability("autoAcceptAlerts", true);
-            capabilities.setCapability("autoGrantPermissions",true);
+            capabilities.setCapability("build", "Tripad-lambda Error");
+            capabilities.setCapability("autoAcceptAlerts", false);
+            capabilities.setCapability("autoGrantPermissions",false);
             capabilities.setCapability("name", "Sample Test Java");
             capabilities.setCapability("console", true);
+            capabilities.setCapability("privateCloud",true);
+            capabilities.setCapability("udid","3414105H804K24");
             capabilities.setCapability("network", false);
             capabilities.setCapability("visual", true);
+            capabilities.setCapability("browserName","Chrome");
             capabilities.setCapability("devicelog", true);
+            capabilities.setCapability("dedicatedProxy",true);
+            capabilities.setCapability("deviceOrientation","PORTRAIT");
+            capabilities.setCapability("geoLocation","US");
+            capabilities.setCapability("language","en");
+            capabilities.setCapability("liveVideo",true);
+            capabilities.setCapability("locale","US");
+
 
             driver = new AppiumDriver(
                     new URL("https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"),
