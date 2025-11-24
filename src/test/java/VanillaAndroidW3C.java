@@ -29,7 +29,7 @@ public class VanillaAndroidW3C {
 
         // *** W3C lt:options ***
         ltOptions.put("w3c", true);
-        ltOptions.put("build", "Java Vanilla - Android W3C");
+        ltOptions.put("build", "LambadErrorDebug Tripad");
         ltOptions.put("name", "Sample Test Java W3C");
         ltOptions.put("platformName", platform);
         ltOptions.put("deviceName", device);
