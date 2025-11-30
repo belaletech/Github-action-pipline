@@ -1,8 +1,8 @@
 name: Android Maven Tests
 
 on:
-  schedule:
-    - cron: "*/10 * * * *"   # 👈 Run every 10 minutes
+  # schedule:
+  #   - cron: "*/10 * * * *"   # 👈 Run every 10 minutes
   push:
     branches: [ master ]
   pull_request:
