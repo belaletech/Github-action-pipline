@@ -5,8 +5,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 
 public class vanilla_android {
     public static String userName = System.getenv("LT_USERNAME") == null ? "YOUR_USERNAM" // Add username here
@@ -20,114 +18,79 @@ public class vanilla_android {
 
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("deviceName", "iPhone.*");
-            capabilities.setCapability("platformVersion", "26");
-            capabilities.setCapability("platformName", "iOS");
+            capabilities.setCapability("deviceName", "Pixel Tablet");
+            capabilities.setCapability("platformVersion", "13");
+            capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("isRealMobile", true);
-            capabilities.setCapability("app", "lt://APP10160622431767769936744209"); // Enter your app url
-//            capabilities.setCapability("deviceOrientation", "PORTRAIT");
-            capabilities.setCapability("build", "");
+            capabilities.setCapability("app", "lt://APP10160301691761838297670235"); // Enter your app url
+            capabilities.setCapability("deviceOrientation", "PORTRAIT");
+            capabilities.setCapability("build", "Tripad-lambda Error");
             capabilities.setCapability("autoAcceptAlerts", false);
             capabilities.setCapability("autoGrantPermissions",false);
             capabilities.setCapability("name", "Sample Test Java");
             capabilities.setCapability("console", true);
-//            capabilities.setCapability("privateCloud",true);
+            capabilities.setCapability("privateCloud",true);
+            capabilities.setCapability("udid","3414105H804K24");
             capabilities.setCapability("network", false);
             capabilities.setCapability("visual", true);
-            capabilities.setCapability("resignApp",false);
-//            capabilities.setCapability("browserName","Chrome");
-            capabilities.setCapability("region","ap");
-            capabilities.setCapability("timezone","Kolkata");
+            capabilities.setCapability("browserName","Chrome");
             capabilities.setCapability("devicelog", true);
             capabilities.setCapability("dedicatedProxy",true);
-//            capabilities.setCapability("deviceOrientation","PORTRAIT");
-            capabilities.setCapability("autoGrantPermissions",true);
-            capabilities.setCapability("autoAcceptAlerts",true);
-//            capabilities.setCapability("geoLocation","US");
+            capabilities.setCapability("deviceOrientation","PORTRAIT");
+            capabilities.setCapability("geoLocation","US");
             capabilities.setCapability("language","en");
             capabilities.setCapability("liveVideo",true);
-            capabilities.setCapability("locale","en");
+            capabilities.setCapability("locale","US");
 
 
             driver = new AppiumDriver(
                     new URL("https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"),
                     capabilities);
-//
-//            MobileElement color = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/color"));
-//            color.click();
-//
-//            MobileElement text = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/Text"));
-//            // Changes the text to proverbial
-//            text.click();
-//
-//            // toast is visible
-//            MobileElement toast = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/toast"));
-//            toast.click();
-//
-//            // notification is visible
-//            MobileElement notification = (MobileElement) driver
-//                    .findElement(MobileBy.id("com.lambdatest.proverbial:id/notification"));
-//            notification.click();
-//
-//            // Open the geolocation page
-//            MobileElement geo = (MobileElement) driver
-//                    .findElement(MobileBy.id("com.lambdatest.proverbial:id/geoLocation"));
-//            geo.click();
-//            Thread.sleep(5000);
-//
-//            // takes back to home page
-//            MobileElement el3 = (MobileElement) driver.findElementByAccessibilityId("Home");
-//
-//            driver.navigate().back();
-//            Thread.sleep(2000);
-//
-//            // Takes to speed test page
-//            MobileElement speedtest = (MobileElement) driver
-//                    .findElement(MobileBy.id("com.lambdatest.proverbial:id/speedTest"));
-//            speedtest.click();
-//            Thread.sleep(5000);
-//
-//            driver.navigate().back();
-//
-//            // Opens the browser
-//            MobileElement browser = (MobileElement) driver.findElement(MobileBy.AccessibilityId("Browser"));
-//            browser.click();
-//
-//            MobileElement url = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/url"));
-//            url.sendKeys("https://www.lambdatest.com");
-//            MobileElement find = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/find"));
-//            find.click();
 
+            MobileElement color = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/color"));
+            color.click();
 
+            MobileElement text = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/Text"));
+            // Changes the text to proverbial
+            text.click();
 
+            // toast is visible
+            MobileElement toast = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/toast"));
+            toast.click();
 
+            // notification is visible
+            MobileElement notification = (MobileElement) driver
+                    .findElement(MobileBy.id("com.lambdatest.proverbial:id/notification"));
+            notification.click();
 
-            ((JavascriptExecutor) driver)
-                    .executeScript("lambda-testCase-start={app lunch}");
+            // Open the geolocation page
+            MobileElement geo = (MobileElement) driver
+                    .findElement(MobileBy.id("com.lambdatest.proverbial:id/geoLocation"));
+            geo.click();
+            Thread.sleep(5000);
 
-            Thread.sleep(1000);
+            // takes back to home page
+            MobileElement el3 = (MobileElement) driver.findElementByAccessibilityId("Home");
 
-            driver.removeApp("com.Ios.MMT");
-            ((JavascriptExecutor) driver)
-                    .executeScript("lambda-testCase-end={app lunch}");
+            driver.navigate().back();
+            Thread.sleep(2000);
 
-            // SECOND APP
-            ((JavascriptExecutor) driver)
-                    .executeScript("lambda-testCase-start={second app biometric start}");
+            // Takes to speed test page
+            MobileElement speedtest = (MobileElement) driver
+                    .findElement(MobileBy.id("com.lambdatest.proverbial:id/speedTest"));
+            speedtest.click();
+            Thread.sleep(5000);
 
-            Map<String, Object> data = new HashMap<>();
-            data.put("appUrl", "lt://APP10160622431767769936744209");
-            data.put("retainData", true);
-            data.put("resignApp",false);
+            driver.navigate().back();
 
-            driver.executeScript("lambda-install-app", data);
-            Thread.sleep(1000);
-            driver.activateApp("com.Ios.MMT");
+            // Opens the browser
+            MobileElement browser = (MobileElement) driver.findElement(MobileBy.AccessibilityId("Browser"));
+            browser.click();
 
-            ((JavascriptExecutor) driver)
-                    .executeScript("lambda-testCase-end={second app biometric start}");
-
-            Thread.sleep(8000);
+            MobileElement url = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/url"));
+            url.sendKeys("https://www.lambdatest.com");
+            MobileElement find = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/find"));
+            find.click();
 
         } catch (AssertionError a) {
             ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
