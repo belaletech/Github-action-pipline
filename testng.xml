@@ -4,9 +4,9 @@
 <suite name="LambdaTest Android W3C Suite" parallel="false">
 
     <test name="Android W3C Execution">
-        <parameter name="device" value="Pixel Tablet"/>
-        <parameter name="version" value="13"/>
-        <parameter name="platform" value="Android"/>
+        <parameter name="device" value="iPhone.*"/>
+        <parameter name="version" value="26"/>
+        <parameter name="platform" value="iOS"/>
 
         <classes>
             <class name="VanillaAndroidW3C"/>
