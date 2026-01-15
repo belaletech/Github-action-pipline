@@ -29,7 +29,7 @@ public class VanillaAndroidW3C {
 
         // *** W3C lt:options ***
         ltOptions.put("w3c", true);
-        ltOptions.put("build", "mmt new issue lambda hook");
+        ltOptions.put("build", "mmt n");
         ltOptions.put("name", "Sample Test Java W3C");
         ltOptions.put("platformName", platform);
         ltOptions.put("deviceName", device);
